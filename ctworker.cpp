@@ -2,40 +2,20 @@
 #include <QThread>
 
 
-CTWorker::CTWorker(QObject *parent) :
-    QObject(parent)
+CTWorker::CTWorker(double arg, _dll_func func, double* result, QObject *parent) :
+    QObject(parent), arg_(arg)
 {
-//    cl = NULL;
+    func_ = func;
+    result_ = result;
 }
 
 CTWorker::~CTWorker()
 {
-//    if (cl != NULL) {
-//        delete cl;
-//    }
-}
-
-void CTWorker::addThread()
-{
-    CTWorker* worker = new CTWorker(0);
-    QThread* thread = new QThread;
-    worker->moveToThread(thread);
-
-    connect(thread, SIGNAL(started()), worker, SLOT(process()));
-    connect(worker, SIGNAL(finished()), thread, SLOT(quit()));
-    connect(worker, SIGNAL(finished()), worker, SLOT(deleteLater()));
-    connect(thread, SIGNAL(finished()), thread, SLOT(deleteLater()));
-
-    thread->start();
-
-    return;
-
 }
 
 void CTWorker::process()
 {
-    qDebug("Yes, I'm here!");
+    *result_ = func_(arg_);
+    qDebug () << "Yes, I'm here!, result:" << *result_;
     emit finished();
-    return;
 }
-

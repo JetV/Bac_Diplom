@@ -3,9 +3,8 @@
 
 #include <QMainWindow>
 #include <QLibrary>
-
-typedef double  (*_dll_func)(double);
-
+#include <QThread>
+#include "ctworker.h"
 
 namespace Ui {
 class MainWindow;
@@ -14,18 +13,24 @@ class MainWindow;
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
-    
+
 public:
     explicit MainWindow(QWidget *parent = 0);
-    _dll_func getFun;
     ~MainWindow();
-    
-public slots:
+
+private slots:
+    void on_lineEdit_returnPressed();
+    void ready();
 
     void on_pushButton_clicked();
 
 private:
     Ui::MainWindow *ui;
+    _dll_func getFun;
+    double result_;
+    CTWorker* worker_;
+    QThread* thread_;
+    void runThread(double arg, _dll_func func);
 };
 
 #endif // MAINWINDOW_H

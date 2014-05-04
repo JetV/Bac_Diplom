@@ -4,16 +4,20 @@
 #include <QObject>
 #include <QDebug>
 
+typedef double (*_dll_func)(double);
 
 class CTWorker : public QObject
 {
     Q_OBJECT
 public:
-    explicit CTWorker(QObject *parent = 0);
+    explicit CTWorker(double arg, _dll_func func, double* result, QObject *parent = 0);
     ~CTWorker();
+    double result() const;
+
 private:
-//    Calc* cl;
-    void addThread();
+    double arg_;
+    double* result_;
+    _dll_func func_;
 
 signals:
     void finished();
@@ -21,7 +25,6 @@ signals:
 
 public slots:
     void process();
-    //void stop();
 
 };
 

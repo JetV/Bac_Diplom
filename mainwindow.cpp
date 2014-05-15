@@ -6,7 +6,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    QLibrary library("C:\\Users\\Sergey\\Desktop\\qtproject\\sincalc-build\\Release\\release\\sincalc.dll");
+    QLibrary library("C:\\Qt\\sinus\\sincalc-build\\Release\\release\\sincalc.dll");
     this->getFun = (_dll_func)library.resolve("SinCalc");
 }
 

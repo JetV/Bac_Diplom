@@ -24,7 +24,7 @@ struct UsrParm {
     double PhsCoeff;
     double AmpCoeff;
     int PlotType;
-} strucArg;
+};
 
 
 

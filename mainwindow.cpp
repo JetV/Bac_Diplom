@@ -15,9 +15,9 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::runThread(double arg, _dll_func func)
+void MainWindow::runThread(double arg, UsrParm strucArg, _dll_func func)
 {
-    worker_ = new CTWorker(arg, strucArg, func, &result_);
+    worker_ = new CTWorker(arg, strucArg_, func, &result_);
     thread_ = new QThread;
     worker_->moveToThread(thread_);
 
@@ -42,5 +42,5 @@ void MainWindow::ready()
 void MainWindow::on_pushButton_clicked()
 {
     double arg = this->ui->lineEdit->text().toDouble();
-    runThread(arg, getFun);
+    runThread(arg, strucArg_, getFun);
 }

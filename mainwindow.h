@@ -21,7 +21,6 @@ public:
 private slots:
     void on_lineEdit_returnPressed();
     void ready();
-
     void on_pushButton_clicked();
 
 private:
@@ -31,7 +30,7 @@ private:
     CTWorker* worker_;
     QThread* thread_;
     UsrParm strucArg_;
-    void runThread(double arg, _dll_func func);
+    void runThread(double arg, UsrParm strucArg, _dll_func func);
 };
 
 #endif // MAINWINDOW_H

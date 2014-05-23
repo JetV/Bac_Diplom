@@ -30,6 +30,7 @@ private:
     double result_;
     CTWorker* worker_;
     QThread* thread_;
+    UsrParm strucArg_;
     void runThread(double arg, _dll_func func);
 };
 

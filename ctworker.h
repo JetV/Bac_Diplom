@@ -5,14 +5,25 @@
 #include <QDebug>
 
 
+
+//struct UsrParm {
+//    double InitVal = 0;
+//    double TmSec = 1;
+//    double Stp = 0.1;
+//    int BdyNum = 15;
+//    double PhsCoeff = 5.1;
+//    double AmpCoeff = 1;
+//    int PlotType = 0;
+//} strucArg;
+
 struct UsrParm {
-    double InitVal = 0;
-    double TmSec = 1;
-    double Stp = 0.1;
-    int BdyNum = 15;
-    double PhsCoeff = 5.1;
-    double AmpCoeff = 1;
-    int PlotType = 0;
+    double InitVal;
+    double TmSec;
+    double Stp;
+    int BdyNum;
+    double PhsCoeff;
+    double AmpCoeff;
+    int PlotType;
 } strucArg;
 
 
@@ -33,6 +44,7 @@ private:
     double arg_;
     double* result_;
     _dll_func func_;
+    UsrParm strucArg_;
 
 
 signals:

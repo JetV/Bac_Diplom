@@ -7,6 +7,9 @@ CTWorker::CTWorker(double arg, UsrParm strucArg, _dll_func func, double* result,
 {
     func_ = func;
     result_ = result;
+
+    UsrParm *structArg_ = new UsrParm;
+    structArg_ = &strucArg;
 }
 
 CTWorker::~CTWorker()

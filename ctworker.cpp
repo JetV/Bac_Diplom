@@ -18,6 +18,7 @@ void CTWorker::process()
 {
 
     *result_ = func_(arg_, strucArg_);
+
     qDebug () << "Yes, I'm here!, result:" << *result_;
     emit finished();
 }

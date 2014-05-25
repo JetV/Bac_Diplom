@@ -11,6 +11,9 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = sinus
 TEMPLATE = app
 
+INCLUDEPATH += C:/Qwt/include
+LIBS += -LC:/Qwt/lib -lqwt
+
 #LIBS        += -LE:\include\my_dll -ldll_test
 SOURCES += main.cpp\
         mainwindow.cpp \
@@ -23,3 +26,4 @@ FORMS    += mainwindow.ui
 
 OTHER_FILES += \
     readme.txt
+CONFIG += qwt

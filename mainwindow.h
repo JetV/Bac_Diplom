@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QLibrary>
 #include <QThread>
+#include <QDebug>
 #include "ctworker.h"
 
 namespace Ui {

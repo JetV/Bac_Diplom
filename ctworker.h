@@ -5,7 +5,7 @@
 #include <QDebug>
 
 
-
+//Умолчания. TODO: убрать
 //struct UsrParm {
 //    double InitVal = 0;
 //    double TmSec = 1;

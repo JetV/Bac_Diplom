@@ -7,6 +7,22 @@
 #include <QDebug>
 #include "ctworker.h"
 
+#include <qwt_plot.h>
+#include <qwt_plot_grid.h>
+
+#include <qwt_legend.h>
+
+#include <qwt_plot_curve.h>
+#include <qwt_symbol.h>
+
+#include <qwt_plot_magnifier.h>
+
+#include <qwt_plot_panner.h>
+
+#include <qwt_plot_picker.h>
+
+#include <qwt_picker_machine.h>
+
 namespace Ui {
 class MainWindow;
 }
@@ -32,6 +48,18 @@ private:
     QThread* thread_;
     UsrParm strucArg_;
     void runThread(double arg, UsrParm strucArg, _dll_func func);
+
+    void addPlot();
+    void addPlotGrid();
+
+    QwtPlotCurve *curve;
+    QPolygonF points;
+    void addCurve();
+
+    void enableMagnifier();
+    void enableMovingOnPlot();
+
+    void enablePicker();
 };
 
 #endif // MAINWINDOW_H

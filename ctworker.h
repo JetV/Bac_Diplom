@@ -5,17 +5,6 @@
 #include <QDebug>
 
 
-//Умолчания. TODO: убрать
-//struct UsrParm {
-//    double InitVal = 0;
-//    double TmSec = 1;
-//    double Stp = 0.1;
-//    int BdyNum = 15;
-//    double PhsCoeff = 5.1;
-//    double AmpCoeff = 1;
-//    int PlotType = 0;
-//} strucArg;
-
 struct UsrParm {
     double InitVal;
     double TmSec;
@@ -30,7 +19,7 @@ struct UsrParm {
 
 
 
-typedef double (*_dll_func)(double, UsrParm, double**);
+typedef double (*_dll_func)(double, UsrParm, double** &);
 
 
 

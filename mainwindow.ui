@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>720</width>
-    <height>459</height>
+    <width>784</width>
+    <height>454</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,7 +17,7 @@
    <widget class="QTabWidget" name="tabWidget">
     <property name="geometry">
      <rect>
-      <x>440</x>
+      <x>510</x>
       <y>0</y>
       <width>281</width>
       <height>401</height>
@@ -36,7 +36,7 @@
         <x>0</x>
         <y>0</y>
         <width>271</width>
-        <height>191</height>
+        <height>281</height>
        </rect>
       </property>
       <property name="title">
@@ -45,8 +45,8 @@
       <widget class="QLineEdit" name="InitVal">
        <property name="geometry">
         <rect>
-         <x>162</x>
-         <y>10</y>
+         <x>160</x>
+         <y>40</y>
          <width>101</width>
          <height>20</height>
         </rect>
@@ -58,8 +58,8 @@
       <widget class="QLineEdit" name="TmSec">
        <property name="geometry">
         <rect>
-         <x>162</x>
-         <y>40</y>
+         <x>160</x>
+         <y>70</y>
          <width>101</width>
          <height>20</height>
         </rect>
@@ -71,8 +71,8 @@
       <widget class="QLineEdit" name="Stp">
        <property name="geometry">
         <rect>
-         <x>162</x>
-         <y>70</y>
+         <x>160</x>
+         <y>100</y>
          <width>101</width>
          <height>20</height>
         </rect>
@@ -84,8 +84,8 @@
       <widget class="QLineEdit" name="BdyNum">
        <property name="geometry">
         <rect>
-         <x>162</x>
-         <y>100</y>
+         <x>160</x>
+         <y>130</y>
          <width>101</width>
          <height>20</height>
         </rect>
@@ -97,8 +97,8 @@
       <widget class="QLineEdit" name="PhsCoeff">
        <property name="geometry">
         <rect>
-         <x>162</x>
-         <y>130</y>
+         <x>160</x>
+         <y>160</y>
          <width>101</width>
          <height>20</height>
         </rect>
@@ -110,8 +110,8 @@
       <widget class="QLineEdit" name="AmpCoeff">
        <property name="geometry">
         <rect>
-         <x>162</x>
-         <y>160</y>
+         <x>160</x>
+         <y>190</y>
          <width>101</width>
          <height>20</height>
         </rect>
@@ -123,8 +123,8 @@
       <widget class="QLabel" name="label">
        <property name="geometry">
         <rect>
-         <x>10</x>
-         <y>10</y>
+         <x>8</x>
+         <y>40</y>
          <width>111</width>
          <height>20</height>
         </rect>
@@ -136,8 +136,8 @@
       <widget class="QLabel" name="label_2">
        <property name="geometry">
         <rect>
-         <x>10</x>
-         <y>40</y>
+         <x>8</x>
+         <y>70</y>
          <width>131</width>
          <height>20</height>
         </rect>
@@ -149,8 +149,8 @@
       <widget class="QLabel" name="label_3">
        <property name="geometry">
         <rect>
-         <x>10</x>
-         <y>70</y>
+         <x>8</x>
+         <y>100</y>
          <width>111</width>
          <height>20</height>
         </rect>
@@ -162,8 +162,8 @@
       <widget class="QLabel" name="label_4">
        <property name="geometry">
         <rect>
-         <x>10</x>
-         <y>100</y>
+         <x>8</x>
+         <y>130</y>
          <width>111</width>
          <height>20</height>
         </rect>
@@ -175,21 +175,21 @@
       <widget class="QLabel" name="label_5">
        <property name="geometry">
         <rect>
-         <x>10</x>
-         <y>130</y>
-         <width>121</width>
+         <x>8</x>
+         <y>160</y>
+         <width>141</width>
          <height>20</height>
         </rect>
        </property>
        <property name="text">
-        <string>Фазовый коэффициент</string>
+        <string>Частотный коэффициент</string>
        </property>
       </widget>
       <widget class="QLabel" name="label_6">
        <property name="geometry">
         <rect>
-         <x>10</x>
-         <y>160</y>
+         <x>8</x>
+         <y>190</y>
          <width>151</width>
          <height>20</height>
         </rect>
@@ -198,12 +198,64 @@
         <string>Амплитудный коэффициент</string>
        </property>
       </widget>
+      <widget class="QLineEdit" name="LftEdge">
+       <property name="geometry">
+        <rect>
+         <x>160</x>
+         <y>220</y>
+         <width>101</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>0</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_7">
+       <property name="geometry">
+        <rect>
+         <x>8</x>
+         <y>220</y>
+         <width>151</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Начало интервала</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="RgtEdge">
+       <property name="geometry">
+        <rect>
+         <x>160</x>
+         <y>250</y>
+         <width>101</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>29</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_8">
+       <property name="geometry">
+        <rect>
+         <x>8</x>
+         <y>250</y>
+         <width>151</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Конец интервала</string>
+       </property>
+      </widget>
      </widget>
      <widget class="QPushButton" name="pushButton">
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>200</y>
+        <y>290</y>
         <width>271</width>
         <height>23</height>
        </rect>
@@ -216,9 +268,9 @@
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>230</y>
+        <y>320</y>
         <width>271</width>
-        <height>141</height>
+        <height>61</height>
        </rect>
       </property>
      </widget>
@@ -257,7 +309,7 @@
      <rect>
       <x>10</x>
       <y>0</y>
-      <width>421</width>
+      <width>491</width>
       <height>401</height>
      </rect>
     </property>
@@ -272,11 +324,13 @@
       <rect>
        <x>10</x>
        <y>10</y>
-       <width>401</width>
+       <width>471</width>
        <height>381</height>
       </rect>
      </property>
     </widget>
+    <zorder>Qwt_Widget</zorder>
+    <zorder></zorder>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
@@ -284,7 +338,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>720</width>
+     <width>784</width>
      <height>18</height>
     </rect>
    </property>

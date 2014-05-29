@@ -17,6 +17,7 @@ CTWorker::~CTWorker()
 
 void CTWorker::process()
 {
+
     *result_ = func_(arg_, strucArg_, resArr_);
 
     qDebug () << "Yes, I'm here!, result:" << *result_;

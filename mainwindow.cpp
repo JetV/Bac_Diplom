@@ -1,16 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
-#include <qwt_plot.h>
-#include <qwt_plot_grid.h>
-#include <qwt_legend.h>
-#include <qwt_plot_curve.h>
-#include <qwt_symbol.h>
-#include <qwt_plot_magnifier.h>
-#include <qwt_plot_panner.h>
-#include <qwt_plot_picker.h>
-#include <qwt_picker_machine.h>
-
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -73,7 +63,7 @@ void MainWindow::ready()
 
     ui->plainTextEdit->appendPlainText(QString::number(result_));
 
-    qDebug() << "arr[0]" << *resArr_;
+    //qDebug() << "arr[0]" << resArr_[0][0];
     worker_->deleteLater();
 }
 
@@ -81,12 +71,13 @@ void MainWindow::ready()
 void MainWindow::on_pushButton_clicked()
 {
     double arg = this->ui->lineEdit->text().toDouble();
+
     strucArg_.AmpCoeff = this->ui->AmpCoeff->text().toDouble();
     strucArg_.BdyNum = this->ui->BdyNum->text().toInt();
     strucArg_.InitVal = this->ui->InitVal->text().toDouble();
     strucArg_.FrcyCoeff = this->ui->PhsCoeff->text().toDouble();
-    strucArg_.LftEdge = 0; //TODO! Передача в функцию правильной длины и типа графика
-    strucArg_.RgtEdge = 29;
+    strucArg_.LftEdge = this->ui->LftEdge->text().toDouble(); //TODO! Передача в функцию правильной длины и типа графика
+    strucArg_.RgtEdge = this->ui->RgtEdge->text().toDouble();
     strucArg_.PlotType = 0;
     strucArg_.Stp = this->ui->Stp->text().toDouble();
     strucArg_.TmSec = this->ui->TmSec->text().toDouble();   

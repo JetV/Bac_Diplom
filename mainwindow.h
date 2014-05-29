@@ -47,6 +47,7 @@ private:
     CTWorker* worker_;
     QThread* thread_;
     UsrParm strucArg_;
+    double** resArr_;
     void runThread(double arg, UsrParm strucArg, _dll_func func);
 
     void addPlot();

@@ -21,14 +21,16 @@ struct UsrParm {
     double TmSec;
     double Stp;
     int BdyNum;
-    double PhsCoeff;
+    double FrcyCoeff;
     double AmpCoeff;
+    double LftEdge;
+    double RgtEdge;
     int PlotType;
 };
 
 
 
-typedef double (*_dll_func)(double, UsrParm);
+typedef double (*_dll_func)(double, UsrParm, double**);
 
 
 
@@ -36,7 +38,7 @@ class CTWorker : public QObject
 {
     Q_OBJECT
 public:
-    explicit CTWorker(double arg, UsrParm strucArg, _dll_func func, double* result, QObject *parent = 0);
+    explicit CTWorker(double arg, UsrParm strucArg, _dll_func func, double* result, double*** resArr, QObject *parent = 0);
     ~CTWorker();
     double result() const;
 
@@ -45,12 +47,10 @@ private:
     double* result_;
     _dll_func func_;
     UsrParm strucArg_;
-
+    double** resArr_;
 
 signals:
-
     void finished();
-
 
 public slots:
     void process();

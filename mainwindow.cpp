@@ -17,6 +17,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
     QLibrary library("C:\\Qt\\sinus\\sincalc-build\\Release\\release\\sincalc.dll");
     this->getFun = (_dll_func)library.resolve("SinCalc");
 
@@ -49,7 +50,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::runThread(double arg, UsrParm strucArg, _dll_func func)
 {
-    worker_ = new CTWorker(arg, strucArg, func, &result_);
+    worker_ = new CTWorker(arg, strucArg, func, &result_, &resArr_);
     thread_ = new QThread;
     worker_->moveToThread(thread_);
 
@@ -57,6 +58,7 @@ void MainWindow::runThread(double arg, UsrParm strucArg, _dll_func func)
     connect(worker_, SIGNAL(finished()), thread_, SLOT(quit()));
     connect(worker_, SIGNAL(finished()), this, SLOT(ready()));
     connect(thread_, SIGNAL(finished()), thread_, SLOT(deleteLater()));
+
     thread_->start();
 }
 
@@ -70,6 +72,8 @@ void MainWindow::ready()
     ui->lineEdit_2->setText(QString::number(result_));
 
     ui->plainTextEdit->appendPlainText(QString::number(result_));
+
+    qDebug() << "arr[0]" << *resArr_;
     worker_->deleteLater();
 }
 
@@ -80,10 +84,12 @@ void MainWindow::on_pushButton_clicked()
     strucArg_.AmpCoeff = this->ui->AmpCoeff->text().toDouble();
     strucArg_.BdyNum = this->ui->BdyNum->text().toInt();
     strucArg_.InitVal = this->ui->InitVal->text().toDouble();
-    strucArg_.PhsCoeff = this->ui->PhsCoeff->text().toDouble();
+    strucArg_.FrcyCoeff = this->ui->PhsCoeff->text().toDouble();
+    strucArg_.LftEdge = 0; //TODO! Передача в функцию правильной длины и типа графика
+    strucArg_.RgtEdge = 0;
     strucArg_.PlotType = 0;
     strucArg_.Stp = this->ui->Stp->text().toDouble();
-    strucArg_.TmSec = this->ui->TmSec->text().toDouble();
+    strucArg_.TmSec = this->ui->TmSec->text().toDouble();   
 
     runThread(arg, strucArg_, getFun);
 }
@@ -112,7 +118,7 @@ void MainWindow::addPlotGrid()
 {
     // #include <qwt_plot_grid.h>
     QwtPlotGrid *grid = new QwtPlotGrid();
-    grid->setMajorPen(QPen( Qt::gray, 2 )); // цвет линий и толщина
+    grid->setMajorPen(QPen( Qt::gray, 0.3 )); // цвет линий и толщина
     grid->attach( ui->Qwt_Widget );
 }
 

@@ -86,7 +86,7 @@ void MainWindow::on_pushButton_clicked()
     strucArg_.InitVal = this->ui->InitVal->text().toDouble();
     strucArg_.FrcyCoeff = this->ui->PhsCoeff->text().toDouble();
     strucArg_.LftEdge = 0; //TODO! Передача в функцию правильной длины и типа графика
-    strucArg_.RgtEdge = 0;
+    strucArg_.RgtEdge = 29;
     strucArg_.PlotType = 0;
     strucArg_.Stp = this->ui->Stp->text().toDouble();
     strucArg_.TmSec = this->ui->TmSec->text().toDouble();   

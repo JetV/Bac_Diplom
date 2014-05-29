@@ -52,7 +52,7 @@
         </rect>
        </property>
        <property name="text">
-        <string>0</string>
+        <string>1</string>
        </property>
       </widget>
       <widget class="QLineEdit" name="TmSec">
@@ -65,7 +65,7 @@
         </rect>
        </property>
        <property name="text">
-        <string>1</string>
+        <string>10</string>
        </property>
       </widget>
       <widget class="QLineEdit" name="Stp">
@@ -91,7 +91,7 @@
         </rect>
        </property>
        <property name="text">
-        <string>15</string>
+        <string>30</string>
        </property>
       </widget>
       <widget class="QLineEdit" name="PhsCoeff">
@@ -104,7 +104,7 @@
         </rect>
        </property>
        <property name="text">
-        <string>5.1</string>
+        <string>0.001</string>
        </property>
       </widget>
       <widget class="QLineEdit" name="AmpCoeff">
@@ -117,7 +117,7 @@
         </rect>
        </property>
        <property name="text">
-        <string>1</string>
+        <string>0.033</string>
        </property>
       </widget>
       <widget class="QLabel" name="label">
